@@ -45,8 +45,6 @@ int main(size_t argc, char** argv)
 	for (size_t i = 0; i < quantity_pieces; ++i) {
 		size_t size = lenght;
 		if (i == quantity_pieces - 1) size = quantity_numbers - i * lenght;
-		//std::thread t(glava26::sumFunc, arr_nums.data(), i * lenght, size);
-		//arr_threads.push_back(std::move(t));
 		arr_threads.push_back(std::move(std::thread(glava26::sumFunc, arr_nums.data(), i * lenght, size)));
 	}
 
